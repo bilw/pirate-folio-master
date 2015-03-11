@@ -126,7 +126,7 @@ body {
 // social media links
 
 .social {
-	width: 120px;
+	width: 136px;
 	margin: 0 auto;
 
 	span[data-icon]:before {
@@ -135,9 +135,9 @@ body {
 		speak: none;
 		font-weight: 400;
 		font-style: normal;
-		font-size: 25px;
+		font-size: 30px;
 		display:block;
-		line-height: 25px; 
+		line-height: 30px; 
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
 	}
@@ -146,12 +146,17 @@ body {
 		margin-left: 16px;
 		position: absolute;
 		top: 180px;
+
+		span[data-icon]:before {
+			font-size: 25px;
+			line-height: 25px; 
+		}
 	}
 
 	a {
 		float: left;
-		width: 25px;
-		height: 25px;
+		// width: 25px;
+		// height: 25px;
 		margin: 0 $margin/5;
 		color: #f00;
 		text-decoration: none;
@@ -202,7 +207,6 @@ body {
 
 	a:hover {
 		color: #28948c;
-		padding-top: 1px;
 	}
 }
 // searchbar

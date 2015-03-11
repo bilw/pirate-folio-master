@@ -67,7 +67,7 @@ body {
       padding: 0 10px; }
 
 .social {
-  width: 120px;
+  width: 136px;
   margin: 0 auto; }
   .social span[data-icon]:before {
     font-family: pirateregular;
@@ -75,20 +75,21 @@ body {
     speak: none;
     font-weight: 400;
     font-style: normal;
-    font-size: 25px;
+    font-size: 30px;
     display: block;
-    line-height: 25px;
+    line-height: 30px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale; }
   @media screen and (max-width: 520px) {
     .social {
       margin-left: 16px;
       position: absolute;
-      top: 180px; } }
+      top: 180px; }
+      .social span[data-icon]:before {
+        font-size: 25px;
+        line-height: 25px; } }
   .social a {
     float: left;
-    width: 25px;
-    height: 25px;
     margin: 0 2px;
     color: #f00;
     text-decoration: none; }
@@ -113,8 +114,7 @@ body {
       .social a.github:hover {
         background-position: -75px -25px; }
   .social a:hover {
-    color: #28948c;
-    padding-top: 1px; }
+    color: #28948c; }
 
 .searchbar {
   text-align: center; }
