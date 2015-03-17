@@ -59,7 +59,7 @@
   <div class="article-form-container">
     <div class="panel panel-default">
       <h3>Add a Portfolio</h3>
-      <form name="add_portfolio_form" novalidate >
+      <form name="add_portfolio_form" >
         <div class="panel-heading">
           <input class="title" type="text" required placeholder="title" size="30" ng-model="adding_portfolio.title" />
           <input class="date" type="text" required placeholder="yyyy-mm-dd" size="10" ng-model="adding_portfolio.date" ng-required="true" ng-minlength="10" />
@@ -86,7 +86,7 @@
       <div class="description" ng-bind="portfolio.description"></div>
     </header>
     <figure class="portfolio-image">
-      <img ng-src="{{ portfolio.imageurl }}" alt="{{ portfolio.title }}">
+      <img class="ng-cloak" ng-src="{{ portfolio.imageurl }}" alt="{{ portfolio.title }}">
     </figure>
   </article>
 
