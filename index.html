@@ -10,15 +10,8 @@
   <!--<script type="text/javascript" src="angular/js/angular.js"></script>-->
   <script type="text/javascript" src="angular/js/angular.min.js"></script>
 </head>
-<body ng-init="portfolios = [
-    {name: 'vessel1309', title: 'Call of Booty', date: '2013-09-01', description: 'Arrrgh mateys! This be the finest vessel sailing these seas that yer eyes ever laid sight on. Arrrgh.', imageurl: 'images/drunkenPirate_thumb3.png' },
-    {name: 'innocents1404', title: 'The Sack of the Innocents', date: '2014-04-15', description: 'This be a detail of the sacking of the innocents where I played an important role as business analyst and in implementation.', imageurl: 'images/drunkenPirate_thumb2.png' },
-    {name: 'firstmate1210', title: 'Pipe and First Mate', date: '2012-10-01', description: 'After a hard day of lootin\' and shootin\' I like to relax with my best mates and tally up the days booty.', imageurl: 'images/drunkenPirate_thumb1.png' }
-    ]"
->
+<body ng-controller="PortfolioListController">
   <main class="wrap group">
-
-
 
     <aside class="sidebar">
      <div class="my-info">
@@ -26,7 +19,7 @@
        <h1>Cap'n Seymour Butts</h1>
        <h2>Experienced pirate and leader of the salty seamen operating in the Carribean and South Seas.</h2>
        <div class="social group">
-        <a href="#" title="Dribble"><span aria-hidden="true" data-icon="&#xE000;"></span></a>
+        <a href="#" title="Dribbble"><span aria-hidden="true" data-icon="&#xE000;"></span></a>
         <a href="#" title="Poopy"><span aria-hidden="true" data-icon="&#xE001;"></span></a>
         <a href="#" title="Facebook"><span aria-hidden="true" data-icon="&#xE002;"></span></a>
         <a href="#" title="Github"><span aria-hidden="true" data-icon="&#xE003;"></span></a>
@@ -61,67 +54,65 @@
   </nav>
 </aside>
 
-
-
 <div class="content">
+
+  <div class="article-form-container">
+    <div class="panel panel-default">
+      <h3>Add a Portfolio</h3>
+      <form name="add_portfolio_form" novalidate >
+        <div class="panel-heading">
+          <input class="title" type="text" required placeholder="title" size="30" ng-model="adding_portfolio.title" />
+          <input class="date" type="text" required placeholder="yyyy-mm-dd" size="10" ng-model="adding_portfolio.date" ng-required="true" ng-minlength="10" />
+        </div>
+        <div class="panel-body">
+          <textarea required placeholder="description" rows="2" ng-model="adding_portfolio.description"></textarea>
+          <div ng-init="adding_portfolio.imageurl = 'images/drunkenPirate_thumb1.png'">
+            <select class="form-control" required ng-model="adding_portfolio.imageurl">
+              <option value="images/drunkenPirate_thumb1.png">images/drunkenPirate_thumb1.png</option>
+              <option value="images/drunkenPirate_thumb2.png">images/drunkenPirate_thumb2.png</option>
+              <option value="images/drunkenPirate_thumb3.png">images/drunkenPirate_thumb3.png</option>
+            </select>
+          </div>
+          <button class="btn btn-success" ng-click="addPortfolio(adding_portfolio)">Add Portfolio</button>
+        </div>
+      </form>
+    </div>
+  </div>
 
   <article class="portfolio-item group first" ng-repeat="portfolio in portfolios | filter:searchFor">
     <header class="portfolio-info">
-      <div class="title">
-        {{ portfolio.title }}
-      </div>
-      <div class="date">
-        {{ portfolio.date }}
-      </div>
-      <div class="description">
-        {{ portfolio.description }}
-      </div>
+      <span class="title" ng-bind="portfolio.title"></span>
+      <span class="date" ng-bind="portfolio.date"></span>
+      <div class="description" ng-bind="portfolio.description"></div>
     </header>
     <figure class="portfolio-image">
-      <img src="{{ portfolio.imageurl }}" alt="{{ portfolio.title }}">
+      <img ng-src="{{ portfolio.imageurl }}" alt="{{ portfolio.title }}">
     </figure>
   </article>
-
-  <!-- <article class="portfolio-item group">
-    <header class="portfolio-info">
-      <div class="title">The Sack of the Innocents</div>
-      <div class="date">7 Nov 2013</div>
-      <div class="description">
-        This be a detail of the sacking of the innocents where I played an important role as business analyst and in implementation.
-      </div>
-    </header>
-    <figure class="portfolio-image">
-      <img src="images/drunkenPirate_thumb2.png" alt="Sack of the Innocents">
-    </figure>
-  </article>
-
-  <article class="portfolio-item group">
-    <header class="portfolio-info">
-      <div class="title">Pipe and First Mate</div>
-      <div class="date">7 Nov 2013</div>
-      <div class="description">
-        After a hard day of lootin' and shootin' I like to relax with my best mates and tally up the days booty.
-      </div>
-    </header>
-    <figure class="portfolio-image">
-      <img src="images/drunkenPirate_thumb1.png" alt="Pipe and Mate">
-    </figure>
-  </article>
-
-  <article class="portfolio-item group loading-wrap" style="display:none">
-    <header class="portfolio-info">
-    </header>
-    <figure class="portfolio-image">
-      <div class="loading">
-        <img src="images/loading.png" alt="Loading" class="rotate">&nbsp;Loading...
-      </div>
-    </figure>
-  </article> -->
 
 </div>
 </main>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 <script src="js/infinite.js"></script>
 <script src="js/app.js"></script>
+
+<script type="text/javascript">
+function PortfolioListController( $scope ){
+  $scope.portfolios = [
+  {name: 'vessel1309', title: 'Call of Booty', date: '2013-09-01', description: 'Arrrgh mateys! This be the finest vessel sailing these seas that yer eyes ever laid sight on. Arrrgh.', imageurl: 'images/drunkenPirate_thumb3.png' },
+
+  {name: 'innocents1404', title: 'The Sack of the Innocents', date: '2014-04-15', description: 'This be a detail of the sacking of the innocents where I played an important role as business analyst and in implementation.', imageurl: 'images/drunkenPirate_thumb2.png' },
+
+  {name: 'firstmate1210', title: 'Pipe and First Mate', date: '2012-10-01', description: 'After a hard day of lootin\' and shootin\' I like to relax with my best mates and tally up the days booty.', imageurl: 'images/drunkenPirate_thumb1.png' }
+  ];
+
+  $scope.addPortfolio = function( new_portfolio ){
+    $scope.portfolios.unshift( new_portfolio );
+    $scope.adding_portfolio = {};
+  };
+};
+
+</script>
+
 </body>
 </html>
