@@ -285,6 +285,9 @@ ul {
       color: #555; }
     .content .article-form-container .title {
       width: 60%; }
+      @media screen and (max-width: 360px) {
+        .content .article-form-container .title {
+          width: 55%; } }
     .content .article-form-container input[type=text], .content .article-form-container textarea, .content .article-form-container select {
       padding: 8px;
       border-radius: 4px;
@@ -330,7 +333,10 @@ ul {
       -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
       -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
       transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s; }
-    .content .article-form-container .btn {
+      @media screen and (max-width: 360px) {
+        .content .article-form-container .form-control {
+          width: 55%; } }
+    .content .article-form-container input.btn {
       display: inline-block;
       padding: 8px 16px;
       margin-bottom: 0;
@@ -350,12 +356,13 @@ ul {
       background-image: none;
       border: 1px solid transparent;
       border-radius: 4px;
-      float: right; }
-    .content .article-form-container .btn-success {
+      float: right;
+      opacity: 1; }
+    .content .article-form-container input.btn-success {
       color: #fff;
       background-color: #5cb85c;
       border-color: #4cae4c; }
-    .content .article-form-container .btn-success:hover {
+    .content .article-form-container input.btn-success:hover {
       color: #fff;
       background-color: #449d44;
       border-color: #398439; }

@@ -59,10 +59,10 @@
   <div class="article-form-container">
     <div class="panel panel-default">
       <h3>Add a Portfolio</h3>
-      <form name="add_portfolio_form" >
+      <form name="add_portfolio_form" ng-submit="addPortfolio(adding_portfolio)">
         <div class="panel-heading">
           <input class="title" type="text" required placeholder="title" size="30" ng-model="adding_portfolio.title" />
-          <input class="date" type="text" required placeholder="yyyy-mm-dd" size="10" ng-model="adding_portfolio.date" ng-required="true" ng-minlength="10" />
+          <input class="date" type="text" required placeholder="yyyy-mm-dd" size="10" ng-model="adding_portfolio.date" ng-minlength="10" />
         </div>
         <div class="panel-body">
           <textarea required placeholder="description" rows="2" ng-model="adding_portfolio.description"></textarea>
@@ -73,7 +73,7 @@
               <option value="images/drunkenPirate_thumb3.png">images/drunkenPirate_thumb3.png</option>
             </select>
           </div>
-          <button class="btn btn-success" ng-click="addPortfolio(adding_portfolio)">Add Portfolio</button>
+          <input class="btn btn-success" type="submit" value="Add Portfolio" />
         </div>
       </form>
     </div>
@@ -105,6 +105,16 @@ function PortfolioListController( $scope ){
 
   {name: 'firstmate1210', title: 'Pipe and First Mate', date: '2012-10-01', description: 'After a hard day of lootin\' and shootin\' I like to relax with my best mates and tally up the days booty.', imageurl: 'images/drunkenPirate_thumb1.png' }
   ];
+
+  $scope.imageSelect = function(){
+    this.image = [
+    {label: 'images/drunkenPirate_thumb1.png', id: 1},
+    {label: 'images/drunkenPirate_thumb2.png', id: 2},
+    {label: 'images/drunkenPirate_thumb3.png', id: 3}
+    ];
+    this.selectedImageID = 1;
+    
+  };
 
   $scope.addPortfolio = function( new_portfolio ){
     $scope.portfolios.unshift( new_portfolio );
