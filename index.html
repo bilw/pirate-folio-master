@@ -66,7 +66,11 @@
         </div>
         <div class="panel-body">
           <textarea required placeholder="description" rows="2" ng-model="adding_portfolio.description"></textarea>
+          <!-- <input class="title" type="text" required placeholder="image url" size="30" ng-model="adding_portfolio.imageurl" /> -->
           <div ng-init="adding_portfolio.imageurl = 'images/drunkenPirate_thumb1.png'">
+            <!-- <select class="form-control" required ng-model="adding_portfolio.imageurl" ng-options="imageurl in imageurls">
+            </select>
+            {{adding_portfolio.imageurl}} -->
             <select class="form-control" required ng-model="adding_portfolio.imageurl">
               <option value="images/drunkenPirate_thumb1.png">images/drunkenPirate_thumb1.png</option>
               <option value="images/drunkenPirate_thumb2.png">images/drunkenPirate_thumb2.png</option>
@@ -106,15 +110,20 @@ function PortfolioListController( $scope ){
   {name: 'firstmate1210', title: 'Pipe and First Mate', date: '2012-10-01', description: 'After a hard day of lootin\' and shootin\' I like to relax with my best mates and tally up the days booty.', imageurl: 'images/drunkenPirate_thumb1.png' }
   ];
 
-  $scope.imageSelect = function(){
-    this.image = [
-    {label: 'images/drunkenPirate_thumb1.png', id: 1},
-    {label: 'images/drunkenPirate_thumb2.png', id: 2},
-    {label: 'images/drunkenPirate_thumb3.png', id: 3}
-    ];
-    this.selectedImageID = 1;
-    
-  };
+  // $scope.imageurls = [
+  // {imageurl: 'images/drunkenPirate_thumb1.png', id: 1},
+  // {imageurl: 'images/drunkenPirate_thumb2.png', id: 2},
+  // {imageurl: 'images/drunkenPirate_thumb3.png', id: 3}
+  // ];
+
+  // function chooseImage( $scope ){
+  //   this.images = [
+  //   {label: 'images/drunkenPirate_thumb1.png', id: 1},
+  //   {label: 'images/drunkenPirate_thumb2.png', id: 2},
+  //   {label: 'images/drunkenPirate_thumb3.png', id: 3}
+  //   ];
+  //   this.selectedImageID = 1;
+  // };
 
   $scope.addPortfolio = function( new_portfolio ){
     $scope.portfolios.unshift( new_portfolio );
