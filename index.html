@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app>
+<html ng-app="portfolioSharingApp">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="initial-scale=1.0">
@@ -9,8 +9,11 @@
   <script src="js/modernizr.js"></script>
   <!--<script type="text/javascript" src="angular/js/angular.js"></script>-->
   <script type="text/javascript" src="angular/js/angular.min.js"></script>
+  <script type="text/javascript" src="angular/js/angular-route.js"></script>
+  <script type="text/javascript" src="angular/app.js"></script>
+  <script type="text/javascript" src="angular/controllers/portfoliolistcontroller.js"></script>
 </head>
-<body ng-controller="PortfolioListController">
+<body><!-- ng-controller="PortfolioListController" -->
   <main class="wrap group">
 
     <aside class="sidebar">
@@ -54,83 +57,43 @@
   </nav>
 </aside>
 
-<div class="content">
+<ng-view></ng-view><!-- portfolio_list_partial.html -->
 
-  <div class="article-form-container">
-    <div class="panel panel-default">
-      <h3>Add a Portfolio</h3>
-      <form name="add_portfolio_form" ng-submit="addPortfolio(adding_portfolio)">
-        <div class="panel-heading">
-          <input class="title" type="text" required placeholder="title" size="30" ng-model="adding_portfolio.title" />
-          <input class="date" type="text" required placeholder="yyyy-mm-dd" size="10" ng-model="adding_portfolio.date" ng-minlength="10" />
-        </div>
-        <div class="panel-body">
-          <textarea required placeholder="description" rows="2" ng-model="adding_portfolio.description"></textarea>
-          <!-- <input class="title" type="text" required placeholder="image url" size="30" ng-model="adding_portfolio.imageurl" /> -->
-          <div ng-init="adding_portfolio.imageurl = 'images/drunkenPirate_thumb1.png'">
-            <!-- <select class="form-control" required ng-model="adding_portfolio.imageurl" ng-options="imageurl in imageurls">
-            </select>
-            {{adding_portfolio.imageurl}} -->
-            <select class="form-control" required ng-model="adding_portfolio.imageurl">
-              <option value="images/drunkenPirate_thumb1.png">images/drunkenPirate_thumb1.png</option>
-              <option value="images/drunkenPirate_thumb2.png">images/drunkenPirate_thumb2.png</option>
-              <option value="images/drunkenPirate_thumb3.png">images/drunkenPirate_thumb3.png</option>
-            </select>
-          </div>
-          <input class="btn btn-success" type="submit" value="Add Portfolio" />
-        </div>
-      </form>
-    </div>
-  </div>
-
-  <article class="portfolio-item group first" ng-repeat="portfolio in portfolios | filter:searchFor">
-    <header class="portfolio-info">
-      <span class="title" ng-bind="portfolio.title"></span>
-      <span class="date" ng-bind="portfolio.date"></span>
-      <div class="description" ng-bind="portfolio.description"></div>
-    </header>
-    <figure class="portfolio-image">
-      <img class="ng-cloak" ng-src="{{ portfolio.imageurl }}" alt="{{ portfolio.title }}">
-    </figure>
-  </article>
-
-</div>
 </main>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 <script src="js/infinite.js"></script>
-<script src="js/app.js"></script>
+<script src="js/app.js"></script>-->
 
 <script type="text/javascript">
-function PortfolioListController( $scope ){
-  $scope.portfolios = [
-  {name: 'vessel1309', title: 'Call of Booty', date: '2013-09-01', description: 'Arrrgh mateys! This be the finest vessel sailing these seas that yer eyes ever laid sight on. Arrrgh.', imageurl: 'images/drunkenPirate_thumb3.png' },
+// function PortfolioListController( $scope ){
+//   $scope.portfolios = [
+//   {name: 'vessel1309', title: 'Call of Booty', date: '2013-09-01', description: 'Arrrgh mateys! This be the finest vessel sailing these seas that yer eyes ever laid sight on. Arrrgh.', imageurl: 'images/drunkenPirate_thumb3.png' },
 
-  {name: 'innocents1404', title: 'The Sack of the Innocents', date: '2014-04-15', description: 'This be a detail of the sacking of the innocents where I played an important role as business analyst and in implementation.', imageurl: 'images/drunkenPirate_thumb2.png' },
+//   {name: 'innocents1404', title: 'The Sack of the Innocents', date: '2014-04-15', description: 'This be a detail of the sacking of the innocents where I played an important role as business analyst and in implementation.', imageurl: 'images/drunkenPirate_thumb2.png' },
 
-  {name: 'firstmate1210', title: 'Pipe and First Mate', date: '2012-10-01', description: 'After a hard day of lootin\' and shootin\' I like to relax with my best mates and tally up the days booty.', imageurl: 'images/drunkenPirate_thumb1.png' }
-  ];
+//   {name: 'firstmate1210', title: 'Pipe and First Mate', date: '2012-10-01', description: 'After a hard day of lootin\' and shootin\' I like to relax with my best mates and tally up the days booty.', imageurl: 'images/drunkenPirate_thumb1.png' }
+//   ];
 
-  // $scope.imageurls = [
-  // {imageurl: 'images/drunkenPirate_thumb1.png', id: 1},
-  // {imageurl: 'images/drunkenPirate_thumb2.png', id: 2},
-  // {imageurl: 'images/drunkenPirate_thumb3.png', id: 3}
-  // ];
+//   // $scope.imageurls = [
+//   // {imageurl: 'images/drunkenPirate_thumb1.png', id: 1},
+//   // {imageurl: 'images/drunkenPirate_thumb2.png', id: 2},
+//   // {imageurl: 'images/drunkenPirate_thumb3.png', id: 3}
+//   // ];
 
-  // function chooseImage( $scope ){
-  //   this.images = [
-  //   {label: 'images/drunkenPirate_thumb1.png', id: 1},
-  //   {label: 'images/drunkenPirate_thumb2.png', id: 2},
-  //   {label: 'images/drunkenPirate_thumb3.png', id: 3}
-  //   ];
-  //   this.selectedImageID = 1;
-  // };
+//   // function chooseImage( $scope ){
+//   //   this.images = [
+//   //   {label: 'images/drunkenPirate_thumb1.png', id: 1},
+//   //   {label: 'images/drunkenPirate_thumb2.png', id: 2},
+//   //   {label: 'images/drunkenPirate_thumb3.png', id: 3}
+//   //   ];
+//   //   this.selectedImageID = 1;
+//   // };
 
-  $scope.addPortfolio = function( new_portfolio ){
-    $scope.portfolios.unshift( new_portfolio );
-    $scope.adding_portfolio = {};
-  };
-};
-
+//   $scope.addPortfolio = function( new_portfolio ){
+//     $scope.portfolios.unshift( new_portfolio );
+//     $scope.adding_portfolio = {};
+//   };
+// };
 </script>
 
 </body>
