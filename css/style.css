@@ -65,6 +65,16 @@ body {
           margin: 0 20px 10px 0; } }
     .sidebar .my-info h1, .sidebar .my-info h2 {
       font-weight: normal; }
+      @media screen and (max-width: 360px) {
+        .sidebar .my-info h1, .sidebar .my-info h2 {
+          width: 50%;
+          margin-left: 158px; } }
+      @media screen and (max-width: 320px) {
+        .sidebar .my-info h1, .sidebar .my-info h2 {
+          clear: left;
+          width: 95%;
+          margin: auto;
+          padding: 0; } }
     .sidebar .my-info h1 {
       font-size: 160%; }
       @media screen and (max-width: 520px) {

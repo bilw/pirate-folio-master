@@ -23,6 +23,7 @@ $break-four: 1050px;
 $break-three: 760px;
 $break-two: 520px;
 $break-one: 360px;
+$break-zero: 320px;
 
 @font-face {
 	font-family: 'pirateregular';
@@ -111,6 +112,18 @@ body {
 
 		h1, h2 {
 			font-weight: normal;
+
+			@media screen and (max-width: $break-one) {
+				width: 50%;
+				margin-left: 158px;
+			}
+
+			@media screen and (max-width: $break-zero) {
+				clear: left;
+				  width: 95%;
+				  margin: auto;
+				  padding: 0;
+			}
 		}
 
 		h1 {
