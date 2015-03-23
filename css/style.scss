@@ -11,6 +11,7 @@ $lightgray: #a1a1a1;
 $verylightgray: #b2c6cd;
 $landlubber: #28948c;
 $overboard: #009dcd;
+$alert: lightpink;
 
 $padding: 10px;
 $margin: 10px;
@@ -23,7 +24,7 @@ $break-four: 1050px;
 $break-three: 760px;
 $break-two: 520px;
 $break-one: 360px;
-$break-zero: 320px;
+$break-zero: 319px;
 
 @font-face {
 	font-family: 'pirateregular';
@@ -445,6 +446,13 @@ ul {
 			margin: 0 0 10px; color: #555;
 		}
 
+		.alert {
+			background: $alert;
+			padding: 8px;
+			border-radius: 5px;
+			margin: 0 0 10px;
+		}
+
 		.title {
 			width: 60%;
 
@@ -484,7 +492,7 @@ ul {
 			background:url("../images/asterisk_orange.png") no-repeat 98% 7px;						
 		}
 
-		input:valid, textarea:valid {
+		input:valid, textarea:valid, select:required {
 			background:url("../images/tick.png") no-repeat 98% 5px;			
 		}		
 

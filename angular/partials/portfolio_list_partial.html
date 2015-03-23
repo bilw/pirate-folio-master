@@ -3,10 +3,13 @@
   <div class="article-form-container">
     <div class="panel panel-default">
       <h3>Add a Portfolio</h3>
-      <form name="add_portfolio_form" ng-submit="addPortfolio(adding_portfolio)">
+      <div class="alert" ng-show="add_portfolio_error != '' ">
+        {{ add_portfolio_error }}
+      </div>
+      <form name="add_portfolio_form" ng-submit="addPortfolio(adding_portfolio)" novalidate>
         <div class="panel-heading">
           <input class="title" type="text" required placeholder="title" size="30" ng-model="adding_portfolio.title" />
-          <input class="date" type="text" required placeholder="yyyy-mm-dd" size="10" ng-model="adding_portfolio.date" ng-minlength="10" />
+          <input class="date" type="text" required placeholder="yyyy/mm/dd" size="10" ng-model="adding_portfolio.date" ng-minlength="10" />
         </div>
         <div class="panel-body">
           <textarea required placeholder="description" rows="2" ng-model="adding_portfolio.description"></textarea>

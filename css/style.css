@@ -69,7 +69,7 @@ body {
         .sidebar .my-info h1, .sidebar .my-info h2 {
           width: 50%;
           margin-left: 158px; } }
-      @media screen and (max-width: 320px) {
+      @media screen and (max-width: 319px) {
         .sidebar .my-info h1, .sidebar .my-info h2 {
           clear: left;
           width: 95%;
@@ -293,6 +293,11 @@ ul {
     .content .article-form-container h3 {
       margin: 0 0 10px;
       color: #555; }
+    .content .article-form-container .alert {
+      background: lightpink;
+      padding: 8px;
+      border-radius: 5px;
+      margin: 0 0 10px; }
     .content .article-form-container .title {
       width: 60%; }
       @media screen and (max-width: 360px) {
@@ -322,7 +327,7 @@ ul {
       opacity: 0.5; }
     .content .article-form-container input:required, .content .article-form-container textarea:required, .content .article-form-container select:required {
       background: url("../images/asterisk_orange.png") no-repeat 98% 7px; }
-    .content .article-form-container input:valid, .content .article-form-container textarea:valid {
+    .content .article-form-container input:valid, .content .article-form-container textarea:valid, .content .article-form-container select:required {
       background: url("../images/tick.png") no-repeat 98% 5px; }
     .content .article-form-container input:focus:invalid, .content .article-form-container textarea:focus:invalid {
       background: url("../images/cancel.png") no-repeat 98% 7px; }

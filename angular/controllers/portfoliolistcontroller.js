@@ -26,12 +26,12 @@
 			{
 				$scope.add_portfolio_error = "Missing description";
 			}
-			else if (!new_portfolio.name)
-			{
-				$scope.add_portfolio_error = "Missing name - six characters";
-			}
+			//else if (!new_portfolio.name)
+			//{
+			//	$scope.add_portfolio_error = "Missing name - six characters";
+			//}
 			else {
-				$scope.portfolios.push( new_portfolio );
+				$scope.portfolios.unshift( new_portfolio );
 				$scope.adding_portfolio = {};
 				$scope.add_portfolio_error = "";
 			};
