@@ -269,13 +269,13 @@ ul {
     .content {
       float: left; } }
   .content .article-form-container {
-    min-height: 250px;
+    float: left;
+    width: 100%;
     background: #e1eef3;
     z-index: 5;
-    padding: 20px 20px 20px 18px; }
+    padding: 20px 20px 10px 18px; }
     .content .article-form-container .panel-default {
       width: 80%;
-      min-width: 320px;
       float: left;
       padding: 15px;
       background: #f2f6f7;
@@ -288,6 +288,11 @@ ul {
     .content .article-form-container .panel-heading .date {
       float: right;
       width: 115px; }
+      @media screen and (max-width: 360px) {
+        .content .article-form-container .panel-heading .date {
+          float: left;
+          width: 100%;
+          margin: 0 0 10px; } }
     .content .article-form-container .cl {
       clear: both; }
     .content .article-form-container h3 {
@@ -302,7 +307,9 @@ ul {
       width: 60%; }
       @media screen and (max-width: 360px) {
         .content .article-form-container .title {
-          width: 55%; } }
+          float: left;
+          width: 100%;
+          margin: 0 0 10px; } }
     .content .article-form-container input[type=text], .content .article-form-container textarea, .content .article-form-container select {
       padding: 8px;
       border-radius: 4px;
@@ -316,6 +323,10 @@ ul {
     .content .article-form-container textarea {
       width: 100%;
       margin-bottom: 5px; }
+    @media screen and (max-width: 360px) {
+      .content .article-form-container select {
+        width: 100% !important;
+        margin: 0 0 10px; } }
     .content .article-form-container input:focus, .content .article-form-container textarea:focus, .content .article-form-container select:focus {
       -webkit-box-shadow: 0 0 15px #ddd;
       -moz-box-shadow: 0 0 15px #ddd;
@@ -377,12 +388,19 @@ ul {
       color: #fff;
       background-color: #5cb85c;
       border-color: #4cae4c; }
+      @media screen and (max-width: 360px) {
+        .content .article-form-container input.btn-success {
+          float: none;
+          width: 80%;
+          margin: 0 auto;
+          display: block; } }
     .content .article-form-container input.btn-success:hover {
       color: #fff;
       background-color: #449d44;
       border-color: #398439; }
   .content .portfolio-item {
-    background: #e1eef3; }
+    background: #e1eef3;
+    clear: left; }
     .content .portfolio-item:before {
       content: "";
       position: absolute;

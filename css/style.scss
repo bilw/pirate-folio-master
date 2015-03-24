@@ -413,14 +413,16 @@ ul {
 	}
 
 	.article-form-container {
-		min-height: 250px; 
+		float: left;
+		width: 100%;
+		// min-height: 250px; 
 		background: #e1eef3; 
 		z-index: 5; 
-		padding: 20px 20px 20px 18px;
+		padding: 20px 20px 10px 18px;
 
 		.panel-default { 
 			width: 80%; 
-			min-width: 320px; 
+			// min-width: 320px; 
 			float: left; 
 			padding: 15px; 
 			background: #f2f6f7; 
@@ -438,6 +440,12 @@ ul {
 		.panel-heading .date { 
 			float: right; 
 			width: 115px; 
+
+			@media screen and (max-width: $break-one) {
+				float: left;
+				width: 100%;
+				margin: 0 0 10px;
+			}
 		}
 
 		.cl { clear: both; }
@@ -457,7 +465,9 @@ ul {
 			width: 60%;
 
 			@media screen and (max-width: $break-one) {
-				width: 55%;
+				float: left;
+  				width: 100%;
+  				margin: 0 0 10px;
 			}
 		}
 
@@ -473,6 +483,13 @@ ul {
 		textarea { 
 			width: 100%; 
 			margin-bottom: 5px; 
+		}
+
+		select {
+			@media screen and (max-width: $break-one) {
+				width: 100% !important;
+  				margin: 0 0 10px;
+			}
 		}
 
 		input:focus, textarea:focus, select:focus {
@@ -550,6 +567,13 @@ ul {
 			color: #fff;
 			background-color: #5cb85c;
 			border-color: #4cae4c;
+
+			@media screen and (max-width: $break-one) {
+				float: none;
+				width: 80%;
+				margin: 0 auto;
+				display: block;
+			}
 		}
 		input.btn-success:hover {
 			color: #fff;
@@ -561,6 +585,7 @@ ul {
 
 	.portfolio-item {
 		background: $babyblue;
+		clear: left;
 
 		&:before {
 			content: "";
