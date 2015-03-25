@@ -1,9 +1,9 @@
 <div class="content">
 	<div class="error-page">
 		<div class="error-page-message">
-			<h3>SHIVER ME TIMBERS!!!</h3>
-			<p>Th' treasure ye be lookin' for won't be found here!</p>
+			<h3 ng-bind="error_page.title"></h3>
+			<p ng-bind="error_page.message"></p>
 		</div>
-		<img src="../../images/shiver-me-timbers.jpg" />
+		<img class="ng-cloak" ng-src="{{ error_page.imageurl }}" alt="{{ error_page.title }} {{ error_page.message }}" />
 	</div>
 </div>

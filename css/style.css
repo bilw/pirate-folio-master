@@ -487,6 +487,7 @@ ul {
     width: 50%;
     float: left; }
   .error-page h3 {
+    text-transform: uppercase;
     margin-bottom: 10px; }
   @media screen and (max-width: 520px) {
     .error-page {

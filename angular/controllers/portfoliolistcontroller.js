@@ -36,6 +36,8 @@
 				$scope.add_portfolio_error = "";
 			};
 		};
+
+		$scope.error_page = {title: 'Shiver me timbers!!!', message: 'Th\' treasure ye be lookin\' for won\'t be found here!', imageurl: '../../images/shiver-me-timbers.jpg'};
 	};
 
 	portfolioApp.controller("PortfolioListController", PortfolioListController);
