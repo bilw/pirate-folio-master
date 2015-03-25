@@ -65,6 +65,9 @@ body {
           margin: 0 20px 10px 0; } }
     .sidebar .my-info h1, .sidebar .my-info h2 {
       font-weight: normal; }
+      @media screen and (max-width: 520px) {
+        .sidebar .my-info h1, .sidebar .my-info h2 {
+          margin-left: 158px; } }
       @media screen and (max-width: 360px) {
         .sidebar .my-info h1, .sidebar .my-info h2 {
           width: 50%;
@@ -82,6 +85,11 @@ body {
           font-size: 175%;
           line-height: 28px;
           margin-top: 25px; } }
+      @media screen and (max-width: 319px) {
+        .sidebar .my-info h1 {
+          font-size: 155%;
+          margin-top: 195px;
+          margin-left: 15px; } }
     .sidebar .my-info h2 {
       font-size: 100%;
       padding: 0 10px; }
@@ -113,10 +121,6 @@ body {
     margin: 0 2px;
     color: #f00;
     text-decoration: none; }
-    @media screen and (-webkit-min-device-pixel-ratio: 2), screen and (min-device-pixel-ratio: 2) {
-      .social a {
-        background: url(images/social-media@2x.png) no-repeat;
-        background-size: 101px 51px; } }
     .social a.dribbble {
       background-position: 0px 0px; }
       .social a.dribbble:hover {
@@ -446,6 +450,12 @@ ul {
         text-align: right;
         padding-right: 10px;
         opacity: 0.9; }
+        @media screen and (max-width: 360px) {
+          .content .portfolio-item .portfolio-info .date {
+            display: block;
+            width: 100%;
+            float: left;
+            text-align: left; } }
   .content .portfolio-image {
     padding: 20px;
     background: #FFF;
@@ -455,6 +465,9 @@ ul {
       .content .portfolio-image {
         float: left;
         width: 70%; } }
+    @media screen and (max-width: 319px) {
+      .content .portfolio-image {
+        padding: 10px; } }
     .content .portfolio-image img {
       width: 100%;
       max-width: 610px;
