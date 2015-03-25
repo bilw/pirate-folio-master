@@ -695,7 +695,48 @@ ul {
 			}
 		}
 	}
+
+	
+
 }
+
+.error-page {
+		width: 100%;
+		height: 100vh;
+		background: $babyblue; 
+		padding: $padding*2;
+		float: left;
+		font-size: 2.2em;
+
+		.error-page-message {
+			width: 50%;
+			float: left;
+		}
+
+		h3 {
+			margin-bottom: $margin;
+		}
+
+		@media screen and (max-width: $break-two) {
+			font-size: 1.3em;
+			line-height: 120%;
+			height: 80vh;
+
+			h3 {
+				margin-top: $margin;
+				margin-bottom: $margin;
+			}
+
+			img {
+				width: 50%;
+			}
+		}
+
+		@media screen and (max-width: $break-zero) {
+			font-size: .9em;
+		}
+	}
+
 div.loading {
 	color: darken($gray, 20%);
 	position: absolute;
